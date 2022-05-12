@@ -1,0 +1,25 @@
+digraph "main" {  
+"29" [label = <(printf,printf(&quot;What is the meaning of life?\n&quot;))<SUB>10</SUB>> ]
+"31" [label = <(exit,exit(0))<SUB>11</SUB>> ]
+"12" [label = <(&lt;operator&gt;.logicalAnd,argc &gt; 1 &amp;&amp; strcmp(argv[1], &quot;42&quot;) == 0)<SUB>6</SUB>> ]
+"13" [label = <(&lt;operator&gt;.greaterThan,argc &gt; 1)<SUB>6</SUB>> ]
+"16" [label = <(&lt;operator&gt;.equals,strcmp(argv[1], &quot;42&quot;) == 0)<SUB>6</SUB>> ]
+"24" [label = <(fprintf,fprintf(stderr, &quot;It depends!\n&quot;))<SUB>7</SUB>> ]
+"27" [label = <(exit,exit(42))<SUB>8</SUB>> ]
+"17" [label = <(strcmp,strcmp(argv[1], &quot;42&quot;))<SUB>6</SUB>> ]
+"18" [label = <(&lt;operator&gt;.indirectIndexAccess,argv[1])<SUB>6</SUB>> ]
+"7" [label = <(METHOD,main)<SUB>5</SUB>> ]
+"33" [label = <(METHOD_RETURN,int)<SUB>5</SUB>> ]
+  "29" -> "31" 
+  "31" -> "33" 
+  "12" -> "24" 
+  "12" -> "29" 
+  "13" -> "12" 
+  "13" -> "18" 
+  "16" -> "12" 
+  "24" -> "27" 
+  "27" -> "29" 
+  "17" -> "16" 
+  "18" -> "17" 
+  "7" -> "13" 
+}
